@@ -7,18 +7,24 @@
         <label for="title">Title</label>
         <br>
         <input type="text" name="title"
-               placeholder="Post title"
+               placeholder="Zertifizierung"
                value="{{ request.form['title'] or post['title'] }}"></input>
         <br>
 
         <label for="content">Post Content</label>
         <br>
         <textarea name="content"
-                  placeholder="Post content"
-                  rows="15"
-                  cols="60"
+                  placeholder="Beschreibung"
+                  rows="4"
+                  cols="40"
                   >{{ request.form['content'] or post['content'] }}</textarea>
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit">Übermitteln</button>
+    </form>
+
+    <hr>
+    <form action="{{ url_for('delete', id=post['id']) }}" method="POST">
+        <input type="submit" value="Eintrag löschen"
+                onclick="return confirm('Sind Sie sicher, dass der Eintrag gelöscht werden soll?')">
     </form>
 {% endblock %}
