@@ -37,6 +37,13 @@
         margin: 10px;
         background-color: #dbd7e4;
       }
+
+      .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+      }
     </style>
   </head>
   <body>
@@ -67,6 +74,11 @@
     </form>
     
 
-    <div class="content">{% block content %} {% endblock %}</div>
+    <div class="content">
+      {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        
+      {% block content %} {% endblock %}</div>
   </body>
 </html>
