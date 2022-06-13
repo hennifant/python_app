@@ -33,9 +33,9 @@ def create():
         content = request.form['content']
 
         if not title:
-            flash('Title is required!')
+            flash('Zertifikatsname erforderlich!')
         elif not content:
-            flash('Content is required!')
+            flash('Beschreibung des Zertifikats erforderlich!')
         else:
             conn = get_db_connection()
             conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
@@ -55,10 +55,10 @@ def edit(id):
         content = request.form['content']
 
         if not title:
-            flash('Title is required!')
+            flash('Zertifikatsname erforderlich!')
 
         elif not content:
-            flash('Content is required!')
+            flash('Beschreibung des Zertifikats erforderlich!')
 
         else:
             conn = get_db_connection()
@@ -78,6 +78,6 @@ def delete(id):
     conn.execute('DELETE FROM posts WHERE id = ?', (id,))
     conn.commit()
     conn.close()
-    flash('"{}" was successfully deleted!'.format(post['title']))
+    flash('"{}" wurde erfolgreich gelöscht!'.format(post['title']))
     return redirect(url_for('index'))
 
