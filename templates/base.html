@@ -43,7 +43,30 @@
     <header>
       <h1><a href="{{ url_for('index') }}">Pexon Zertifizierungs App</a></h1>
     </header>
-    <hr />
+    <h2>Hello Pexonian,</h2>
+    <p>trage hier deine Zertifizierungen ein!</p>
+    <h3>Neue Zertifizierung hinzufügen</h3>
+    <form method="post">
+        <label for="title">Name der Zertifizierung</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Zertifizierung"
+               value="{{ request.form['title'] }}">
+        </input>
+        <br>
+
+        <label for="content">Beschreibung der Zertifizierung</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Beschreibung"
+                  rows="4"
+                  cols="40"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Übermitteln</button>
+    </form>
+    
+
     <div class="content">{% block content %} {% endblock %}</div>
   </body>
 </html>
