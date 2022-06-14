@@ -7,6 +7,5 @@ Install the requirements into a virtualenv or your environment of choice
 which includes
 
 - flask
-- pytest
 
 then run the `pytest` command
