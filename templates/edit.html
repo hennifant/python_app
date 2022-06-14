@@ -4,14 +4,14 @@
 {% block content %}
     <h1>{% block title %} Edit "{{ post['title'] }}" {% endblock %}</h1>
     <form method="post">
-        <label for="title">Title</label>
+        <label for="title">Name der Zertifizierung</label>
         <br>
         <input type="text" name="title"
                placeholder="Zertifizierung"
                value="{{ request.form['title'] or post['title'] }}"></input>
         <br>
 
-        <label for="content">Post Content</label>
+        <label for="content">Beschreibung der Zertifizierung</label>
         <br>
         <textarea name="content"
                   placeholder="Beschreibung"
