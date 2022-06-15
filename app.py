@@ -1,8 +1,9 @@
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect, abort
-
+from init_db import connection
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1234567890'
+
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
